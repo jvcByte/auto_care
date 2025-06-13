@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Card,
@@ -15,6 +15,14 @@ const Question = ({ question, onAnswer, timeLimit = 30, onNextQuestion }) => {
   const [showResult, setShowResult] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
   const [timeExpired, setTimeExpired] = useState(false);
+
+  useEffect(() => {
+    // Reset states when question changes
+    setSelectedOption(null);
+    setShowResult(false);
+    setIsAnswered(false);
+    setTimeExpired(false);
+  }, [question]);
 
   const handleAnswer = (option) => {
     if (!isAnswered && !timeExpired) {
