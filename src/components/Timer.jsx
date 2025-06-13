@@ -8,33 +8,40 @@ import {
 const Timer = ({ timeLimit, onTimeUp }) => {
   const [secondsLeft, setSecondsLeft] = useState(timeLimit);
   const [timerId, setTimerId] = useState(null);
+  const [isTimeUp, setIsTimeUp] = useState(false);
 
   useEffect(() => {
+    let isMounted = true;
+
     if (timeLimit > 0) {
       const newTimer = setInterval(() => {
-        setSecondsLeft(prev => {
-          const newTime = prev - 1;
-          if (newTime <= 0) {
-            onTimeUp();
-            return 0;
-          }
-          return newTime;
-        });
+        if (isMounted && !isTimeUp) {
+          setSecondsLeft(prev => {
+            const newTime = prev - 1;
+            if (newTime <= 0) {
+              setIsTimeUp(true);
+              return 0;
+            }
+            return newTime;
+          });
+        }
       }, 1000);
       setTimerId(newTimer);
     }
+
     return () => {
+      isMounted = false;
       if (timerId) {
         clearInterval(timerId);
       }
     };
-  }, [timeLimit, onTimeUp]);
+  }, [timeLimit]);
 
   useEffect(() => {
-    if (secondsLeft <= 0) {
+    if (isTimeUp) {
       onTimeUp();
     }
-  }, [secondsLeft, onTimeUp]);
+  }, [isTimeUp, onTimeUp]);
 
   return (
     <Box display="flex" alignItems="center" sx={{ mb: 2 }}>
