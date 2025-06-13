@@ -86,19 +86,19 @@ const Quiz = () => {
                 Score Breakdown:
               </Typography>
               <Grid container spacing={2}>
-                <Grid item>
+                <Grid>
                   <Chip
                     label={`Easy: ${scoreEasy()}/${countQuestions('easy')}`}
                     color={scoreEasy() === countQuestions('easy') ? 'success' : 'default'}
                   />
                 </Grid>
-                <Grid item>
+                <Grid>
                   <Chip
                     label={`Medium: ${scoreMedium()}/${countQuestions('medium')}`}
                     color={scoreMedium() === countQuestions('medium') ? 'success' : 'default'}
                   />
                 </Grid>
-                <Grid item>
+                <Grid>
                   <Chip
                     label={`Hard: ${scoreHard()}/${countQuestions('hard')}`}
                     color={scoreHard() === countQuestions('hard') ? 'success' : 'default'}
