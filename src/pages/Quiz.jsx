@@ -130,9 +130,11 @@ const Quiz = () => {
         <Typography variant="h5" component="div" gutterBottom>
           Question {currentQuestionIndex + 1}/{questions.length}
         </Typography>
-        <Typography variant="body2" color="text.secondary" gutterBottom>
-          Category: {currentQuestion.category} • Difficulty: {currentQuestion.difficulty}
-        </Typography>
+        {currentQuestion && (
+          <Typography variant="body2" color="text.secondary" gutterBottom>
+            Category: {currentQuestion.category} • Difficulty: {currentQuestion.difficulty}
+          </Typography>
+        )}
         <LinearProgress
           variant="determinate"
           value={(currentQuestionIndex / questions.length) * 100}
