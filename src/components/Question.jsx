@@ -18,9 +18,7 @@ const Question = ({ question, onAnswer }) => {
   const handleAnswer = (option) => {
     setSelectedOption(option);
     setShowResult(true);
-    setTimeout(() => {
-      onAnswer(option === question.correctAnswer);
-    }, 1000);
+    onAnswer(option === question.correctAnswer);
   };
 
   return (
