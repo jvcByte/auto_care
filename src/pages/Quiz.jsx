@@ -26,6 +26,8 @@ const Quiz = () => {
   }, [currentQuestionIndex, questions, currentQuestion]);
 
   const getTimeLimit = (question) => {
+    if (!question) return 30; // Default to 30s if no question
+    
     switch (question.difficulty) {
       case 'easy':
         return 30;
@@ -37,6 +39,11 @@ const Quiz = () => {
         return 30;
     }
   };
+
+  useEffect(() => {
+    // Reset time limit when question changes
+    setTimeLimit(getTimeLimit(currentQuestion));
+  }, [currentQuestion]);
 
   const handleAnswer = (isCorrect) => {
     if (isCorrect) {
