@@ -1,4 +1,5 @@
-import { ThemeProvider, createTheme, Box } from '@mui/material/styles';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import Quiz from './pages/Quiz';
 
