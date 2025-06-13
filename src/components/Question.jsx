@@ -24,6 +24,14 @@ const Question = ({ question, onAnswer, timeLimit = 30, onNextQuestion }) => {
     setTimeExpired(false);
   }, [question]);
 
+  // Reset timer when timeLimit changes
+  useEffect(() => {
+    if (timeLimit > 0) {
+      setTimeExpired(false);
+      setShowResult(false);
+    }
+  }, [timeLimit]);
+
   const handleAnswer = (option) => {
     if (!isAnswered && !timeExpired) {
       setSelectedOption(option);
