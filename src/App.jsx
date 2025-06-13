@@ -1,4 +1,4 @@
-import { ThemeProvider, createTheme } from '@mui/material/styles';
+import { ThemeProvider, createTheme, Box } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Quiz from './pages/Quiz';
 
@@ -19,7 +19,21 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Quiz />
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '100vh',
+          alignItems: 'center',
+          justifyContent: 'center',
+          bgcolor: 'background.default',
+          color: 'text.primary',
+          py: 4,
+          px: 2,
+        }}
+      >
+        <Quiz />
+      </Box>
     </ThemeProvider>
   );
 }
