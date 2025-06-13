@@ -58,6 +58,10 @@ const Question = ({ question, onAnswer, timeLimit = 30, onNextQuestion }) => {
     }
   };
 
+  if (!question) {
+    return null;
+  }
+
   return (
     <Card>
       <CardContent>
