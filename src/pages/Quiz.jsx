@@ -125,13 +125,25 @@ const Quiz = () => {
   }
 
   return (
-    <Container maxWidth="md">
-      <Box sx={{ mt: 4 }}>
+    <Container maxWidth="md" sx={{ 
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      minHeight: '100vh',
+      px: 2
+    }}>
+      <Box sx={{ 
+        width: '100%',
+        maxWidth: 600,
+        mt: 4,
+        textAlign: 'center'
+      }}>
         <Typography variant="h5" component="div" gutterBottom>
           Question {currentQuestionIndex + 1}/{questions.length}
         </Typography>
         {currentQuestion && (
-          <Typography variant="body2" color="text.secondary" gutterBottom>
+          <Typography variant="body2" color="text.secondary" gutterBottom sx={{ textAlign: 'center' }}>
             Category: {currentQuestion.category} • Difficulty: {currentQuestion.difficulty}
           </Typography>
         )}
