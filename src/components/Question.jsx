@@ -14,9 +14,10 @@ const Question = ({ question, onAnswer, timeLimit = 30, onNextQuestion }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
+  const [timeExpired, setTimeExpired] = useState(false);
 
   const handleAnswer = (option) => {
-    if (!isAnswered) {
+    if (!isAnswered && !timeExpired) {
       setSelectedOption(option);
       setShowResult(true);
       setIsAnswered(true);
@@ -24,8 +25,13 @@ const Question = ({ question, onAnswer, timeLimit = 30, onNextQuestion }) => {
     }
   };
 
+  const handleTimeout = () => {
+    setTimeExpired(true);
+    setShowResult(true);
+  };
+
   const handleNextQuestion = () => {
-    if (isAnswered) {
+    if (isAnswered || timeExpired) {
       onNextQuestion();
     }
   };
@@ -36,7 +42,7 @@ const Question = ({ question, onAnswer, timeLimit = 30, onNextQuestion }) => {
         <Typography variant="h5" component="div" gutterBottom>
           {question.question}
         </Typography>
-        <Timer timeLimit={timeLimit} onTimeUp={() => onAnswer(false)} />
+        <Timer timeLimit={timeLimit} onTimeUp={handleTimeout} />
         {showResult ? (
           <Box sx={{ mt: 2 }}>
             {selectedOption === question.correctAnswer ? (
