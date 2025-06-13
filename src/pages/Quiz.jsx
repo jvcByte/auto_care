@@ -22,7 +22,6 @@ const Quiz = () => {
   const [questions] = useState(questionsData.questions);
   const [currentQuestion, setCurrentQuestion] = useState(questions[0]);
   const [timeLimit, setTimeLimit] = useState(30);
-  const [playerName, setPlayerName] = useState('');
 
   useEffect(() => {
     setCurrentQuestion(questions[currentQuestionIndex]);
