@@ -7,10 +7,11 @@ import {
 
 const Timer = ({ timeLimit, onTimeUp }) => {
   const [secondsLeft, setSecondsLeft] = useState(timeLimit);
+  const [timerId, setTimerId] = useState(null);
 
   useEffect(() => {
     if (timeLimit > 0) {
-      const timer = setInterval(() => {
+      const newTimer = setInterval(() => {
         setSecondsLeft(prev => {
           const newTime = prev - 1;
           if (newTime <= 0) {
@@ -20,26 +21,20 @@ const Timer = ({ timeLimit, onTimeUp }) => {
           return newTime;
         });
       }, 1000);
-      return () => clearInterval(timer);
+      setTimerId(newTimer);
     }
+    return () => {
+      if (timerId) {
+        clearInterval(timerId);
+      }
+    };
   }, [timeLimit, onTimeUp]);
 
-  // Clear interval when component unmounts
   useEffect(() => {
-    return () => {
-      const timer = setInterval(() => {
-        setSecondsLeft(prev => {
-          const newTime = prev - 1;
-          if (newTime <= 0) {
-            onTimeUp();
-            return 0;
-          }
-          return newTime;
-        });
-      }, 1000);
-      clearInterval(timer);
-    };
-  }, [onTimeUp]);
+    if (secondsLeft <= 0) {
+      onTimeUp();
+    }
+  }, [secondsLeft, onTimeUp]);
 
   return (
     <Box display="flex" alignItems="center" sx={{ mb: 2 }}>
