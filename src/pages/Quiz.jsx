@@ -134,7 +134,7 @@ const Quiz = () => {
               </Button>
             </CardContent>
           </Card>
-          <Leaderboard scores={{ total: score, difficulty: currentQuestion.difficulty }} />
+          <Leaderboard scores={{ total: score, difficulty: currentQuestion?.difficulty || 'easy' }} />
         </Box>
       </Container>
     );
