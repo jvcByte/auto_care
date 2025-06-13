@@ -61,6 +61,13 @@ const Quiz = () => {
     }
   }, [currentQuestionIndex, questions.length]);
 
+  // Score calculation functions
+  const scoreEasy = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'easy' && q.correctAnswer === currentQuestion.correctAnswer).length;
+  const scoreMedium = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'medium' && q.correctAnswer === currentQuestion.correctAnswer).length;
+  const scoreHard = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'hard' && q.correctAnswer === currentQuestion.correctAnswer).length;
+
+  const countQuestions = (difficulty) => questions.filter(q => q.difficulty === difficulty).length;
+
   if (showResults) {
     return (
       <Container maxWidth="md" sx={{ mt: 4 }}>
@@ -114,12 +121,6 @@ const Quiz = () => {
       </Container>
     );
   }
-
-  const scoreEasy = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'easy' && q.correctAnswer === currentQuestion.correctAnswer).length;
-  const scoreMedium = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'medium' && q.correctAnswer === currentQuestion.correctAnswer).length;
-  const scoreHard = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'hard' && q.correctAnswer === currentQuestion.correctAnswer).length;
-
-  const countQuestions = (difficulty) => questions.filter(q => q.difficulty === difficulty).length;
 
   return (
     <Container maxWidth="md">
