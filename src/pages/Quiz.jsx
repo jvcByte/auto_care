@@ -8,6 +8,8 @@ import {
   Paper,
   Grid,
   Chip,
+  Card,
+  CardContent,
 } from '@mui/material';
 import Question from '../components/Question';
 import questionsData from '../data/questions.json';
