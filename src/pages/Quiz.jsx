@@ -64,9 +64,9 @@ const Quiz = () => {
   }, [currentQuestionIndex, questions.length]);
 
   // Score calculation functions
-  const scoreEasy = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'easy' && q.correctAnswer === currentQuestion.correctAnswer).length;
-  const scoreMedium = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'medium' && q.correctAnswer === currentQuestion.correctAnswer).length;
-  const scoreHard = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'hard' && q.correctAnswer === currentQuestion.correctAnswer).length;
+  const scoreEasy = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'easy' && q.correctAnswer === q.selectedOption).length;
+  const scoreMedium = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'medium' && q.correctAnswer === q.selectedOption).length;
+  const scoreHard = () => questions.slice(0, currentQuestionIndex).filter(q => q.difficulty === 'hard' && q.correctAnswer === q.selectedOption).length;
 
   const countQuestions = (difficulty) => questions.filter(q => q.difficulty === difficulty).length;
 
