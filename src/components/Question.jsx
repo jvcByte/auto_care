@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import Timer from './Timer';
 
-const Question = ({ question, onAnswer, timeLimit = 30 }) => {
+const Question = ({ question, onAnswer, timeLimit = 30, onNextQuestion }) => {
   const [selectedOption, setSelectedOption] = useState(null);
   const [showResult, setShowResult] = useState(false);
   const [isAnswered, setIsAnswered] = useState(false);
@@ -24,6 +24,12 @@ const Question = ({ question, onAnswer, timeLimit = 30 }) => {
     }
   };
 
+  const handleNextQuestion = () => {
+    if (isAnswered) {
+      onNextQuestion();
+    }
+  };
+
   return (
     <Card>
       <CardContent>
@@ -32,13 +38,22 @@ const Question = ({ question, onAnswer, timeLimit = 30 }) => {
         </Typography>
         <Timer timeLimit={timeLimit} onTimeUp={() => onAnswer(false)} />
         {showResult ? (
-          selectedOption === question.correctAnswer ? (
-            <Alert severity="success">Correct!</Alert>
-          ) : (
-            <Alert severity="error">
-              Incorrect. The correct answer was: {question.correctAnswer}
-            </Alert>
-          )
+          <Box sx={{ mt: 2 }}>
+            {selectedOption === question.correctAnswer ? (
+              <Alert severity="success">Correct!</Alert>
+            ) : (
+              <Alert severity="error">
+                Incorrect. The correct answer was: {question.correctAnswer}
+              </Alert>
+            )}
+            <Button
+              variant="contained"
+              onClick={handleNextQuestion}
+              sx={{ mt: 2 }}
+            >
+              Next Question
+            </Button>
+          </Box>
         ) : (
           question.options.map((option, index) => (
             <Button

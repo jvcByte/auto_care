@@ -42,6 +42,9 @@ const Quiz = () => {
     if (isCorrect) {
       setScore((prevScore) => prevScore + 1);
     }
+  };
+
+  const handleNextQuestion = () => {
     setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
   };
 
@@ -131,6 +134,7 @@ const Quiz = () => {
           question={currentQuestion}
           onAnswer={handleAnswer}
           timeLimit={timeLimit}
+          onNextQuestion={handleNextQuestion}
         />
       </Box>
     </Container>
