@@ -1,0 +1,7 @@
+{
+  "name": "Rock of Ages Auto Technology",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
