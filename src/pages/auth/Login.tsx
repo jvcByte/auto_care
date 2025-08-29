@@ -9,7 +9,6 @@ import {
     IonTitle,
     IonToolbar,
     IonText,
-    IonItem,
     IonIcon,
     IonInputPasswordToggle,
 } from '@ionic/react';
@@ -75,9 +74,7 @@ const Login: React.FC = () => {
                                 <p>Don't have an account? <a href="/register" className="ion-text-primary">Register here</a></p>
                             </IonText>
                         </form>
-                        <IonItem lines="none" className="ion-margin-top ion-text-center">
-                            <small>By continuing, you agree to our Terms of Service and Privacy Policy</small>
-                        </IonItem>
+                        
                     </IonCardContent>
                 </IonCard>
             </IonContent>
