@@ -34,9 +34,10 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/home';
+import Welcome from './components/Welcome/Welcome';
 
 setupIonicReact();
 
@@ -48,11 +49,12 @@ const App: React.FC = () => (
         <Switch>
           <Route path="/home" component={Home} />
           <Route exact path="/">
-            <div style={{ padding: '20px' }}>
-              <h1>Welcome to RoA Auto Care</h1>
-              <p>Click the link below to go to the home page:</p>
-              <Link to="/home">Go to Home</Link>
-            </div>
+            <Welcome
+              title="Welcome to RoA Auto Care"
+              subtitle="Click the link below to go to the home page:"
+              text="Go to Home"
+              link="/home"
+            />
           </Route>
         </Switch>
       </IonContent>
