@@ -1,8 +1,8 @@
 import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import './Tab1.css';
+import './Dashboard.css';
 import { ellipsisHorizontalOutline, ellipsisVerticalOutline } from 'ionicons/icons';
 
-const Tab1: React.FC = () => {
+const Dashboard: React.FC = () => {
   return (
     <IonPage>
       <IonHeader className='ion-no-border'>
@@ -88,4 +88,4 @@ const Tab1: React.FC = () => {
   );
 };
 
-export default Tab1;
+export default Dashboard;

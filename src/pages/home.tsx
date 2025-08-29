@@ -10,40 +10,40 @@ import {
   IonTabs,
 } from '@ionic/react';
 import { speedometerOutline, carSportOutline, personOutline } from 'ionicons/icons';
-import Tab1 from './users/tab1/Tab1';
-import Tab2 from './users/tab2/Tab2';
-import Tab3 from './users/tab3/Tab3';
+import Dashboard from './users/dashboard/Dashboard';
+import Services from './users/services/Services';
+import Profile from './users/profile/Profile';
 
 const Home: React.FC = () => (
   <IonPage>
     <IonContent>
       <IonTabs>
         <IonRouterOutlet>
-          <Route exact path="/home/tab1">
-            <Tab1 />
+          <Route exact path="/home/dashboard">
+            <Dashboard />
           </Route>
-          <Route exact path="/home/tab2">
-            <Tab2 />
+          <Route exact path="/home/services">
+            <Services />
           </Route>
-          <Route exact path="/home/tab3">
-            <Tab3 />
+          <Route exact path="/home/profile">
+            <Profile />
           </Route>
           <Route exact path="/home">
-            <Redirect to="/home/tab1" />
+            <Redirect to="/home/dashboard" />
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="home" href="/home/tab1">
+          <IonTabButton tab="home" href="/home/dashboard">
             <IonIcon aria-hidden="true" icon={speedometerOutline} />
-            <IonLabel>Tab 1</IonLabel>
+            <IonLabel>Dashboard</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab2" href="/home/tab2">
+          <IonTabButton tab="tab2" href="/home/services">
             <IonIcon aria-hidden="true" icon={carSportOutline} />
-            <IonLabel>Tab 2</IonLabel>
+            <IonLabel>Services</IonLabel>
           </IonTabButton>
-          <IonTabButton tab="tab3" href="/home/tab3">
+          <IonTabButton tab="tab3" href="/home/profile">
             <IonIcon aria-hidden="true" icon={personOutline} />
-            <IonLabel>Tab 3</IonLabel>
+            <IonLabel>Profile</IonLabel>
           </IonTabButton>
         </IonTabBar>
       </IonTabs>

@@ -1,9 +1,9 @@
 import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../../../components/ExploreContainer/ExploreContainer';
-import './Tab3.css';
-import { ellipsisHorizontalOutline, ellipsisVerticalOutline } from 'ionicons/icons';
+import './Services.css';
+import { cameraOutline, ellipsisHorizontalOutline, ellipsisVerticalOutline } from 'ionicons/icons';
 
-const Tab3: React.FC = () => {
+const Services: React.FC = () => {
   return (
     <IonPage>
       <IonHeader className='ion-no-border'>
@@ -15,22 +15,25 @@ const Tab3: React.FC = () => {
         <IonToolbar>
           <IonButtons slot='secondary'>
             <IonButton>
+              <IonIcon icon={cameraOutline} />
+            </IonButton>
+            <IonButton>
               <IonIcon slot='icon-only' ios={ellipsisHorizontalOutline} md={ellipsisVerticalOutline} />
             </IonButton>
           </IonButtons>
-          <IonTitle>Profile</IonTitle>
+          <IonTitle>Services</IonTitle>
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
         <IonHeader collapse="condense">
           <IonToolbar>
-            <IonTitle size="large">Tab 3</IonTitle>
+            <IonTitle size="large">Services</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <ExploreContainer name="Profile page" />
+        <ExploreContainer name="Services page" />
       </IonContent>
     </IonPage>
   );
 };
 
-export default Tab3;
+export default Services;
