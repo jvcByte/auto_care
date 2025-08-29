@@ -38,8 +38,8 @@ import { Route, Switch } from 'react-router-dom';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Welcome from './components/Welcome/Welcome';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import Login from './pages/auth/Login';
+import Register from './pages/auth/Register';
 import NotFound from './pages/not-found/NotFound';
 import Dashboard from './pages/users/dashboard/Dashboard';
 
@@ -58,9 +58,9 @@ const App: React.FC = () => (
           <Route exact path="/">
             <Welcome
               title="Welcome to Auto Care"
-              subtitle="Click the link below to go to the home page:"
-              text="Go to Home"
-              link="/home"
+              subtitle="Click the link below to go to the login page:"
+              text="Go to Login"
+              link="/login"
             />
           </Route>
           <Route path="*" component={NotFound} />
