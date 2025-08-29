@@ -11,8 +11,8 @@ interface ContainerProps {
 const Welcome: React.FC<ContainerProps> = ({ title, subtitle, text, link }) => {
     return (
         <div className="container">
-            <h1>{title}</h1>
-            <h2>{subtitle}</h2>
+            <h2>{title}</h2>
+            <h4>{subtitle}</h4>
             <Link to={link}>{text}</Link>
         </div>
     );
