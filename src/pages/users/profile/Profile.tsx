@@ -13,7 +13,7 @@ const Profile: React.FC = () => {
       </IonHeader>
       <IonHeader translucent={true} className='ion-no-border'>
         <IonToolbar>
-          <IonButtons slot='secondary'>
+          <IonButtons slot='end'>
             <IonButton>
               <IonIcon slot='icon-only' ios={ellipsisHorizontalOutline} md={ellipsisVerticalOutline} />
             </IonButton>
@@ -22,13 +22,9 @@ const Profile: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Profile</IonTitle>
-          </IonToolbar>
-        </IonHeader>
         <ExploreContainer name="Profile page" />
       </IonContent>
+      
     </IonPage>
   );
 };

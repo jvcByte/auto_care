@@ -41,6 +41,7 @@ import Welcome from './components/Welcome/Welcome';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import NotFound from './pages/not-found/NotFound';
+import Dashboard from './pages/users/dashboard/Dashboard';
 
 setupIonicReact();
 
@@ -53,6 +54,7 @@ const App: React.FC = () => (
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/home" component={Home} />
+          <Route path="/home/dashboard" component={Dashboard} />
           <Route exact path="/">
             <Welcome
               title="Welcome to Auto Care"

@@ -12,7 +12,7 @@ const Dashboard: React.FC = () => {
       </IonHeader>
       <IonHeader translucent={true} className='ion-no-border'>
         <IonToolbar>
-          <IonButtons slot='secondary'>
+          <IonButtons slot='end'>
             <IonButton>
               <IonIcon slot='icon-only' ios={ellipsisHorizontalOutline} md={ellipsisVerticalOutline} />
             </IonButton>

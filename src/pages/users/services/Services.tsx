@@ -13,7 +13,7 @@ const Services: React.FC = () => {
       </IonHeader>
       <IonHeader translucent={true} className='ion-no-border'>
         <IonToolbar>
-          <IonButtons slot='secondary'>
+          <IonButtons slot='end'>
             <IonButton>
               <IonIcon icon={cameraOutline} />
             </IonButton>
@@ -25,11 +25,7 @@ const Services: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Services</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+
         <ExploreContainer name="Services page" />
       </IonContent>
     </IonPage>
