@@ -1,6 +1,6 @@
 import { IonButton, IonButtons, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Tab1.css';
-import { cameraOutline, ellipsisHorizontalOutline, ellipsisVerticalOutline } from 'ionicons/icons';
+import { ellipsisHorizontalOutline, ellipsisVerticalOutline } from 'ionicons/icons';
 
 const Tab1: React.FC = () => {
   return (
@@ -13,9 +13,6 @@ const Tab1: React.FC = () => {
       <IonHeader translucent={true} className='ion-no-border'>
         <IonToolbar>
           <IonButtons slot='secondary'>
-            <IonButton>
-              <IonIcon icon={cameraOutline} />
-            </IonButton>
             <IonButton>
               <IonIcon slot='icon-only' ios={ellipsisHorizontalOutline} md={ellipsisVerticalOutline} />
             </IonButton>

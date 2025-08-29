@@ -50,7 +50,7 @@ const App: React.FC = () => (
           <Route path="/home" component={Home} />
           <Route exact path="/">
             <Welcome
-              title="Welcome to RoA Auto Care"
+              title="Welcome to Auto Care"
               subtitle="Click the link below to go to the home page:"
               text="Go to Home"
               link="/home"
