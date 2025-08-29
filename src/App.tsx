@@ -38,6 +38,9 @@ import { Route, Switch } from 'react-router-dom';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 import Welcome from './components/Welcome/Welcome';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import NotFound from './pages/not-found/NotFound';
 
 setupIonicReact();
 
@@ -47,6 +50,8 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonContent>
         <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/home" component={Home} />
           <Route exact path="/">
             <Welcome
@@ -56,6 +61,7 @@ const App: React.FC = () => (
               link="/home"
             />
           </Route>
+          <Route path="*" component={NotFound} />
         </Switch>
       </IonContent>
     </IonReactRouter>
