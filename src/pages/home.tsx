@@ -9,7 +9,7 @@ import {
   IonTabButton,
   IonTabs,
 } from '@ionic/react';
-import { ellipse, square, triangle } from 'ionicons/icons';
+import { speedometerOutline, carSportOutline, personOutline } from 'ionicons/icons';
 import Tab1 from './users/tab1/Tab1';
 import Tab2 from './users/tab2/Tab2';
 import Tab3 from './users/tab3/Tab3';
@@ -33,16 +33,16 @@ const Home: React.FC = () => (
           </Route>
         </IonRouterOutlet>
         <IonTabBar slot="bottom">
-          <IonTabButton tab="tab1" href="/home/tab1">
-            <IonIcon aria-hidden="true" icon={triangle} />
+          <IonTabButton tab="home" href="/home">
+            <IonIcon aria-hidden="true" icon={speedometerOutline} />
             <IonLabel>Tab 1</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab2" href="/home/tab2">
-            <IonIcon aria-hidden="true" icon={ellipse} />
+            <IonIcon aria-hidden="true" icon={carSportOutline} />
             <IonLabel>Tab 2</IonLabel>
           </IonTabButton>
           <IonTabButton tab="tab3" href="/home/tab3">
-            <IonIcon aria-hidden="true" icon={square} />
+            <IonIcon aria-hidden="true" icon={personOutline} />
             <IonLabel>Tab 3</IonLabel>
           </IonTabButton>
         </IonTabBar>
