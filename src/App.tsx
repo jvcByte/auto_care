@@ -55,7 +55,7 @@ const App: React.FC = () => (
           <Route path="/home" component={Home} />
           <Route path="/home/dashboard" component={Dashboard} />
           <Route exact path="/">
-            <Redirect to="/login" />
+            <Redirect to="/register" />
           </Route>
           <Route path="*" component={NotFound} />
         </Switch>

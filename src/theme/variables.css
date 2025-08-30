@@ -7,6 +7,12 @@
 
 :root {
 
+	--swiper-pagination-color: var(--ion-color-primary);
+	--swiper-pagination-bullet-inactive-color: var(--ion-color-primary);
+	--swiper-pagination-bullet-inactive-opacity: 0.2;
+	--swiper-pagination-bullet-size: 12px;
+	--swiper-pagination-bullet-horizontal-gap: 10px;
+
 	--ion-color-primary: #0a7ea4;
 	--ion-color-primary-rgb: 10,126,164;
 	--ion-color-primary-contrast: #ffffff;

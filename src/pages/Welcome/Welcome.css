@@ -1,0 +1,33 @@
+.swiper {
+    height: 80%;
+}
+
+.swiper-wrapper {
+    height: 100%;
+}
+
+.WelcomeHeaderText {
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.heading5 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    --margin: 0 0 2rem 0;
+    text-align: center;
+}
+
+.swiperSlideContent {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiperImage {
+}
