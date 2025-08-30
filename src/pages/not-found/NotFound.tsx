@@ -1,10 +1,9 @@
-import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar, IonImg } from '@ionic/react';
+import { IonButton, IonContent, IonHeader, IonIcon, IonPage, IonTitle, IonToolbar, IonImg, useIonRouter } from '@ionic/react';
 import { arrowBackOutline, homeOutline } from 'ionicons/icons';
-import { useHistory } from 'react-router';
 import './NotFound.css';
 
 const NotFound: React.FC = () => {
-  const history = useHistory();
+  const router = useIonRouter();
 
   return (
     <IonPage className="not-found-page">
@@ -29,7 +28,7 @@ const NotFound: React.FC = () => {
           
           <div className="action-buttons">
             <IonButton 
-              onClick={() => history.goBack()} 
+              onClick={() => router.goBack()} 
               fill="outline"
               className="ion-margin-end"
             >

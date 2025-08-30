@@ -15,6 +15,7 @@ import {
 import React from 'react';
 import './Login.css';
 import { carSport, arrowForwardOutline } from 'ionicons/icons';
+import { Link } from 'react-router-dom';
 
 const Login: React.FC = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -71,7 +72,7 @@ const Login: React.FC = () => {
                             </IonButton>
 
                             <IonText className="ion-text-center">
-                                <p>Don't have an account? <a href="/register" className="ion-text-primary">Register here</a></p>
+                                <p>Don't have an account? <Link to="/register" className="ion-text-primary">Register here</Link></p>
                             </IonText>
                         </form>
                         
