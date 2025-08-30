@@ -34,10 +34,9 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
-import Welcome from './components/Welcome/Welcome';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import NotFound from './pages/not-found/NotFound';
@@ -56,12 +55,7 @@ const App: React.FC = () => (
           <Route path="/home" component={Home} />
           <Route path="/home/dashboard" component={Dashboard} />
           <Route exact path="/">
-            <Welcome
-              title="Welcome to Auto Care"
-              subtitle="Click the link below to go to the login page:"
-              text="Go to Login"
-              link="/login"
-            />
+            <Redirect to="/login" />
           </Route>
           <Route path="*" component={NotFound} />
         </Switch>
